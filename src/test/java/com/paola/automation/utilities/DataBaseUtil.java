@@ -60,19 +60,6 @@ public class DataBaseUtil {
         }
 
 
-
-public static int getColumnCount() {
-        int coulumnCount = 0;
-
-    try {
-        coulumnCount=rsmd.getColumnCount();
-    } catch (SQLException e) {
-        System.out.println("Failed to get column count " + e.getMessage());
-    }
-
-    return coulumnCount;
-}
-
 public static Map<String,Object> getBookInfo(ResultSet rs) {
 
     Map<String, Object> bookMap = null;

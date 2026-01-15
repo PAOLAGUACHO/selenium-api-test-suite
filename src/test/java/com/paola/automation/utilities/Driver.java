@@ -19,16 +19,10 @@ public class Driver {
 
 
                 case "chrome":
-//                    driverPool.set(new ChromeDriver());
-//                    driverPool.get().manage().window().maximize();
-//                    driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
                     WebDriverManager.chromedriver().setup();
                     driverPool.set(new ChromeDriver());
                     break;
                 case "firefox":
-//                    driverPool.set(new FirefoxDriver());
-//                    driverPool.get().manage().window().maximize();
-//                    driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
                     WebDriverManager.firefoxdriver().setup();
                     driverPool.set(new FirefoxDriver());
                     break;

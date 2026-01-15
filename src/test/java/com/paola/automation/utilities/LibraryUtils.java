@@ -13,15 +13,6 @@ import static io.restassured.RestAssured.given;
 
 public class LibraryUtils {
 
-    public static void librarianLogin() {
-
-        String token = RoleLoginAuthorization("librarian");
-
-        given()
-                .header("Authorization", token)
-                .then()
-                .statusCode(200);
-    }
 
     // This is giving me the LIBRARIAN token.
     public static String getToken(String email, String password) {
@@ -84,21 +75,6 @@ public class LibraryUtils {
 
     }
 
-//    public static Map<String,Object> creatRandomUser() {
-//
-//        Faker faker = new Faker();
-//
-//        Map<String,Object> randomUser = new LinkedHashMap<>();
-//        randomUser.put("full_name",faker.name().fullName());
-//        randomUser.put("email",faker.internet().emailAddress());
-//        randomUser.put("password","libraryUser");
-//        randomUser.put("user_group_id","2");
-//        randomUser.put("status","ACTIVE");
-//        randomUser.put("start_date","1217-13-12");
-//        randomUser.put("end_date","1314-15-11");
-//        randomUser.put("address",faker.address().fullAddress());
-//
-//        return randomUser;
 
     public static Map<String, Object> createRandomUser() {
 
@@ -136,16 +112,10 @@ public class LibraryUtils {
         return response;
     }
 
-    public static void postRequestWithToken(String token) {
-
-
-
-
-
-
-    }
 
 }
+
+
 
 
 

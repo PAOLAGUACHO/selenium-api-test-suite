@@ -25,13 +25,6 @@ public List<WebElement> books;
 @FindBy(xpath = "//input[@type='search']")
 public WebElement search;
 
-//    public String getBookName(String bookName) {
-//
-//      search.sendKeys(bookName);
-//
-//        return webElement.getText();
-//    }
-
 }
 
 
