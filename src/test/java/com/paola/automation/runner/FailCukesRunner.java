@@ -1,4 +1,4 @@
-package com.cydeo.runner;
+package com.paola.automation.runner;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;

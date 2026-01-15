@@ -1,13 +1,13 @@
-package com.cydeo.pages;
+package com.paola.automation.pages;
 
-import com.cydeo.utilities.Driver;
+import com.paola.automation.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class BookPage extends LoginPage {
+public class BookPage  {
 
     public BookPage(){
         PageFactory.initElements(Driver.getDriver(), this);

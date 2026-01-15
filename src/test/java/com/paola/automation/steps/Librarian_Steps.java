@@ -1,12 +1,12 @@
-package com.cydeo.steps;
+package com.paola.automation.steps;
 
-import com.cydeo.pages.BasePage;
-import com.cydeo.pages.BookPage;
-import com.cydeo.pages.LoginPage;
-import com.cydeo.utilities.BookUtils;
-import com.cydeo.utilities.BrowserUtils;
-import com.cydeo.utilities.DataBaseUtil;
-import com.cydeo.utilities.LibraryUtils;
+import com.paola.automation.pages.BasePage;
+import com.paola.automation.pages.BookPage;
+import com.paola.automation.pages.LoginPage;
+import com.paola.automation.utilities.BookUtils;
+import com.paola.automation.utilities.BrowserUtils;
+import com.paola.automation.utilities.DataBaseUtil;
+import com.paola.automation.utilities.LibraryUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -26,7 +26,7 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class Librarian_Steps extends LibraryUtils {
+public class Librarian_Steps {
 
     LoginPage loginPage = new LoginPage();
     BookPage bookPage = new BookPage();
@@ -47,7 +47,7 @@ public class Librarian_Steps extends LibraryUtils {
 
     @Given("I logged Library api as a {string}")
     public void i_logged_library_api_as_a(String role) {
-        authRequest1.header("x-library-token", LibraryUtils.RoleLoginAuthorization(role));
+        authRequest1.header("x-library-token",LibraryUtils.RoleLoginAuthorization(role));
     }
 
     @Given("Accept header is {string}")
@@ -58,9 +58,9 @@ public class Librarian_Steps extends LibraryUtils {
     @When("I send GET request to {string} endpoint")
     public void iSendGETRequestToEndpoint(String endpoint) {
 
-       response = authRequest1.when().get(endpoint).prettyPeek();
-       then = response.then();
-       jsonPath = response.jsonPath();
+        response = authRequest1.when().get(endpoint);
+        then = response.then();
+        jsonPath = response.jsonPath();
 
     }
 
@@ -85,7 +85,7 @@ public class Librarian_Steps extends LibraryUtils {
 
     }
 
-// Scenario 2
+    // Scenario 2
     @And("Path param is {string}")
     public void pathParamIs(String id) {
         expectedId = id;
@@ -140,7 +140,7 @@ public class Librarian_Steps extends LibraryUtils {
         assertEquals(expectedValue, actualValue);
         System.out.println("actualVal: " + actualValue);
 
-}
+    }
 
 //scenario 3 All Layers
 
@@ -174,7 +174,7 @@ public class Librarian_Steps extends LibraryUtils {
         assertEquals(Long.valueOf((apiBookInfo.get("isbn"))),randomBook.get("isbn"));
 
 
-       // DB VS API
+        // DB VS API
         assertEquals(dataBaseBookInfo.get("name"),randomBook.get("name"));
         assertEquals(dataBaseBookInfo.get("author"),randomBook.get("author"));
         assertEquals(Integer.parseInt(dataBaseBookInfo.get("year")),(int)randomBook.get("year"));

@@ -1,7 +1,6 @@
-package com.cydeo.utilities;
+package com.paola.automation.utilities;
 
-import com.cydeo.pages.BookPage;
-import org.openqa.selenium.WebElement;
+import com.paola.automation.pages.BookPage;
 
 public class BrowserUtils {
 

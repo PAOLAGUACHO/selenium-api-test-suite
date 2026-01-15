@@ -1,10 +1,9 @@
-package com.cydeo.utilities;
+package com.paola.automation.utilities;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
-import java.time.Duration;
 
 public class Driver {
 
@@ -20,14 +19,18 @@ public class Driver {
 
 
                 case "chrome":
+//                    driverPool.set(new ChromeDriver());
+//                    driverPool.get().manage().window().maximize();
+//                    driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                    WebDriverManager.chromedriver().setup();
                     driverPool.set(new ChromeDriver());
-                    driverPool.get().manage().window().maximize();
-                    driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
                     break;
                 case "firefox":
+//                    driverPool.set(new FirefoxDriver());
+//                    driverPool.get().manage().window().maximize();
+//                    driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                    WebDriverManager.firefoxdriver().setup();
                     driverPool.set(new FirefoxDriver());
-                    driverPool.get().manage().window().maximize();
-                    driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
                     break;
 
             }

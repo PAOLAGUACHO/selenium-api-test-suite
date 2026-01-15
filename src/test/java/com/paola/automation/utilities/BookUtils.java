@@ -1,9 +1,7 @@
-package com.cydeo.utilities;
+package com.paola.automation.utilities;
 
-import com.mysql.cj.protocol.Resultset;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 import java.sql.ResultSet;
@@ -12,7 +10,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.specification.RequestSpecification.*;
 
 public class BookUtils {
 

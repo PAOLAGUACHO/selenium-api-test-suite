@@ -1,22 +1,17 @@
-package com.cydeo.utilities;
+package com.paola.automation.utilities;
 
 import com.github.javafaker.Faker;
-import io.cucumber.java.en.Given;
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import lombok.Getter;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Objects;
 
 import static io.restassured.RestAssured.given;
 
 public class LibraryUtils {
-
 
     public static void librarianLogin() {
 
@@ -66,7 +61,7 @@ public class LibraryUtils {
         switch (role) {
             case "librarian":
                 email = ConfigurationReader.getProperty("librarian_username");
-                password = ConfigurationReader.getProperty("password");
+                password = ConfigurationReader.getProperty("librarian_password");
                 break;
         }
         Map<String, String> credentials = new HashMap<>();
@@ -138,7 +133,7 @@ public class LibraryUtils {
 
         JsonPath jsonPath = response.jsonPath();
 
-       return response;
+        return response;
     }
 
     public static void postRequestWithToken(String token) {
@@ -149,7 +144,6 @@ public class LibraryUtils {
 
 
     }
-
 
 }
 
